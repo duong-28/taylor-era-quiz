@@ -1,4 +1,7 @@
-// Define types for our quiz
+// Add sparkle button effect
+const startButton = document.getElementById('start-button') as HTMLButtonElement;
+
+// types of the quiz
 type Era = {
     name: string;
     description: string;
@@ -19,7 +22,7 @@ const eras: Era[] = [
     {
         name: "Debut (2006) – Taylor Swift 🌾🎸",
         description: "You're authentic, country-loving, and wear your heart on your sleeve!",
-        songs: ["Tim McGraw", "Teardrops On My Guitar", "Our Song"],
+        songs: ["A Place In This World", "Teardrops On My Guitar", "Our Song"],
         score: 0,
         color: "#E6B3B3"
     },
@@ -33,7 +36,7 @@ const eras: Era[] = [
     {
         name: "Speak Now (2010) 💜🎭",
         description: "You're passionate, dramatic, and speak your truth!",
-        songs: ["Mine", "Back to December", "Enchanted"],
+        songs: ["Sparks Fly", "Back to December", "The Story of Us"],
         score: 0,
         color: "#FF69B4"
     },
@@ -47,35 +50,35 @@ const eras: Era[] = [
     {
         name: "1989 (2014) 🌆🕶",
         description: "You're confident, adventurous, and love to have fun!",
-        songs: ["Shake It Off", "Blank Space", "Style"],
+        songs: ["Shake It Off", "Blank Space", "Out of the Woods"],
         score: 0,
         color: "#87CEEB"
     },
     {
         name: "Reputation (2017) 🖤🐍",
         description: "You're bold, mysterious, and don't care what others think!",
-        songs: ["Look What You Made Me Do", "Delicate", "End Game"],
+        songs: ["Look What You Made Me Do", "Gorgeous", "Getaway Car"],
         score: 0,
         color: "#4A4A4A"
     },
     {
         name: "Lover (2019) 💕🌈",
         description: "You're romantic, dreamy, and believe in love!",
-        songs: ["Lover", "ME!", "Cruel Summer"],
+        songs: ["Lover", "Death By A Thousand Cuts", "Cruel Summer"],
         score: 0,
         color: "#FFB6C1"
     },
     {
         name: "Folklore (2020) 🌲📝",
         description: "You're introspective, creative, and love storytelling!",
-        songs: ["Cardigan", "Exile", "The 1"],
+        songs: ["Illicit Affairs", "Hoax", "This Is Me Trying"],
         score: 0,
         color: "#8B4513"
     },
     {
         name: "Evermore (2020) 🍂🕰",
         description: "You're poetic, deep, and embrace your emotions!",
-        songs: ["Willow", "Champagne Problems", "Gold Rush"],
+        songs: ["Cowboy Like Me", "Champagne Problems", "'tis the damn season'"],
         score: 0,
         color: "#8B4513"
     },
@@ -89,7 +92,7 @@ const eras: Era[] = [
     {
         name: "The Tortured Poets Department (2024) 📚🎶",
         description: "You're poetic, deep, and embrace your emotions!",
-        songs: ["Fortnight", "The Tortured Poets Department", "So Long, London"],
+        songs: ["Fortnight", "The Tortured Poets Department", "I Can Do It With A Broken Heart"],
         score: 0,
         color: "#800080"
     }
@@ -98,7 +101,7 @@ const eras: Era[] = [
 // Define our questions
 const questions: Question[] = [
     {
-        text: "What's your ideal weekend activity?",
+        text: "What's your ideal weekend look like?",
         options: [
             "Going to a romantic dinner",
             "Writing poetry in a cozy cafe",
@@ -107,7 +110,7 @@ const questions: Question[] = [
             "Staying home and watching movies"
         ],
         eraPoints: [1, 2, 1, 4, 3],
-        eraIndices: [0, 1, 8, 4, 9]  // Debut, Fearless, Evermore, 1989, Midnights
+        eraIndices: [0, 1, 8, 4, 9]  
     },
     {
         text: "How do you handle heartbreak?",
@@ -119,7 +122,7 @@ const questions: Question[] = [
             "Talk to friends about it"
         ],
         eraPoints: [2, 1, 3, 4, 0],
-        eraIndices: [0, 1, 8, 4, 5]  // Debut, Fearless, Evermore, 1989, Reputation
+        eraIndices: [0, 1, 8, 4, 5]
     },
     {
         text: "What's your favorite type of story?",
@@ -131,7 +134,7 @@ const questions: Question[] = [
             "A mysterious thriller"
         ],
         eraPoints: [1, 2, 3, 4, 5],
-        eraIndices: [0, 1, 8, 5, 9]  // Debut, Fearless, Evermore, Reputation, Midnights
+        eraIndices: [0, 1, 8, 5, 9]  
     },
     {
         text: "What's your preferred writing style?",
@@ -143,7 +146,7 @@ const questions: Question[] = [
             "Dark and mysterious"
         ],
         eraPoints: [2, 1, 3, 4, 5],
-        eraIndices: [0, 1, 8, 4, 5]  // Debut, Fearless, Evermore, 1989, Reputation
+        eraIndices: [0, 1, 8, 4, 5] 
     },
     {
         text: "How do you express yourself?",
@@ -155,12 +158,11 @@ const questions: Question[] = [
             "Through social media"
         ],
         eraPoints: [1, 2, 3, 4, 5],
-        eraIndices: [0, 1, 8, 4, 5]  // Debut, Fearless, Evermore, 1989, Reputation
+        eraIndices: [0, 1, 8, 4, 5]  
     }
 ];
 
 // DOM Elements
-const startButton = document.getElementById('start-button') as HTMLButtonElement;
 const questionContainer = document.getElementById('question-container') as HTMLDivElement;
 const resultContainer = document.getElementById('result-container') as HTMLDivElement;
 const questionText = document.getElementById('question-text') as HTMLHeadingElement;
@@ -186,6 +188,9 @@ function showQuestion() {
         button.addEventListener('click', () => selectOption(index));
         optionsContainer.appendChild(button);
     });
+
+    // Ensure start button is hidden during questions
+    startButton.classList.add('hidden');
 }
 
 // Function to select an option
@@ -224,6 +229,8 @@ function showResult() {
     
     questionContainer.classList.add('hidden');
     resultContainer.classList.remove('hidden');
+    // Ensure start button remains hidden in results
+    startButton.classList.add('hidden');
 }
 
 // Function to reset quiz
@@ -232,6 +239,7 @@ function resetQuiz() {
     selectedOption = null;
     eras.forEach(era => era.score = 0);
     resultContainer.classList.add('hidden');
+    questionContainer.classList.add('hidden');
     startButton.classList.remove('hidden');
 }
 
