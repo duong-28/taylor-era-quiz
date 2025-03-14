@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taylor Swift Era Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="quiz-container">
+            <h1>Taylor Swift Era Quiz</h1>
+            <p class="subtitle">Let's find out which era matches your personality!</p>
+            
+            <div id="question-container" class="hidden">
+                <h2 id="question-text"></h2>
+                <div id="options-container"></div>
+            </div>
+
+            <div id="result-container" class="hidden">
+                <h2>🎵 Your Taylor Swift Era is: <span id="era-name"></span> 🎵</h2>
+                <p id="era-description"></p>
+                <h3>Some songs from this era you might love:</h3>
+                <ul id="era-songs"></ul>
+                <button id="restart-button">Take Quiz Again</button>
+            </div>
+
+            <button id="start-button">Start Quiz</button>
+        </div>
+    </div>
+    <script type="module" src="index.ts"></script>
+</body>
+</html> 
