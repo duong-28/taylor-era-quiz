@@ -13,7 +13,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgba(83, 79, 79, 0.5), rgba(39, 38, 38, 0.5)), url('./images/bg-photo.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(39, 38, 38, 0.5)), url('./images/bg-photo.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -165,19 +165,19 @@ body:after {
 }
 
 h1 {
-    color: #000;
+    color: #9146B4; /* Rich purple */
     text-align: center;
     margin-bottom: 1rem;
     font-size: 2.5rem;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+    text-shadow: 2px 2px 4px rgba(145, 70, 180, 0.3);
 }
 
 .subtitle {
     text-align: center;
-    color: #222;
+    color: #6A4873; /* Muted purple */
     margin-bottom: 2rem;
     font-size: 1.2rem;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+    text-shadow: 1px 1px 2px rgba(106, 72, 115, 0.2);
 }
 
 #question-container {
@@ -185,10 +185,10 @@ h1 {
 }
 
 #question-text {
-    color: #000;
+    color: #4E3A5A; /* Deep purple */
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+    text-shadow: 1px 1px 2px rgba(78, 58, 90, 0.2);
 }
 
 /* Remove the general button styles since we're using .sparkles for both buttons */
@@ -207,13 +207,15 @@ button.option-button {
 }
 
 .option-button:hover {
-    background: rgba(255, 255, 255, 0.9);
-    border-color: rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(88, 61, 122, 0.4) !important;
+    color: #9146B4 !important;
 }
 
 .option-button.selected {
-    background: rgba(255, 255, 255, 0.95);
-    border-color: rgba(0, 0, 0, 0.6);
+    background: rgba(145, 70, 180, 0.1) !important;
+    border-color: rgba(88, 61, 122, 0.6) !important;
+    color: #9146B4 !important;
 }
 
 #result-container {
@@ -221,13 +223,14 @@ button.option-button {
 }
 
 #era-name {
-    color: #ff69b4;
+    color: #9146B4; /* Rich purple */
     font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(145, 70, 180, 0.3);
 }
 
 #era-description {
     margin: 1rem 0;
-    color: #666;
+    color: #6A4873; /* Muted purple */
 }
 
 #era-songs {
@@ -237,12 +240,12 @@ button.option-button {
 
 #era-songs li {
     margin: 0.5rem 0;
-    color: #333;
+    color: #583D7A; /* Royal purple */
 }
 
 /* Update sparkles button styles to apply to both start and restart buttons */
 .sparkles {
-    --clr: 270; /* Deep purple/indigo hue */
+    --clr: 240; /* Midnight blue hue */
     --shadows: 0%;
     --shadowl: 0%;
 
