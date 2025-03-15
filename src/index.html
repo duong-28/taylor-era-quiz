@@ -9,8 +9,10 @@
 <body>
     <div class="container">
         <div id="quiz-container">
-            <h1>Taylor Swift Era Quiz</h1>
-            <p class="subtitle">Let's find out which era matches your personality!</p>
+            <div id="welcome-container">
+                <h1>Taylor Swift Era Quiz</h1>
+                <p class="subtitle">Let's find out which taylor era you are!</p>
+            </div>
             
             <div id="question-container" class="hidden">
                 <h2 id="question-text"></h2>
@@ -18,9 +20,11 @@
             </div>
 
             <div id="result-container" class="hidden">
-                <h2>🎵 Your Taylor Swift Era is: <span id="era-name"></span></h2>
+                <img id="era-gif" class="era-gif" src="" alt="Era Gif">
+                <h2>Your Era is:</h2>
+                <h3 id="era-name" class="era-title"></h3>
                 <p id="era-description"></p>
-                <h3>Some songs from this era you might love:</h3>
+                <h3>Some songs to vibe to:</h3>
                 <ul id="era-songs"></ul>
                 <button id="restart-button" class="sparkles">
                     <span>Take Quiz Again</span>

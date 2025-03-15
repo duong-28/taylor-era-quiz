@@ -222,6 +222,21 @@ button.option-button {
     text-align: center;
 }
 
+.era-gif {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.era-title {
+    font-size: 2rem;
+    margin: 1rem 0;
+    color: #9146B4;
+    text-shadow: 2px 2px 4px rgba(145, 70, 180, 0.3);
+}
+
 #era-name {
     color: #9146B4; /* Rich purple */
     font-weight: bold;
